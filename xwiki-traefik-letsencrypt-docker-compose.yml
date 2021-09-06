@@ -36,6 +36,12 @@ services:
       # Postgres root password (replace with yours)
       POSTGRES_ROOT_PASSWORD: yUN!y@6Ba.m!ZLkbkAX49y@
       POSTGRES_INITDB_ARGS: "--encoding=UTF8"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -h 127.0.0.1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 60s
     restart: unless-stopped
 
   xwiki:
@@ -71,8 +77,10 @@ services:
       - "traefik.http.middlewares.compresstraefik.compress=true"
     restart: unless-stopped
     depends_on:
-      - postgres
-      - traefik
+      postgres:
+        condition: service_healthy
+      traefik:
+        condition: service_healthy
 
   traefik:
     # Image tag (replace with yours)
@@ -168,5 +176,7 @@ services:
       POSTGRES_PASSWORD: b*!HJBJd4*q!L4qHpjD2K6!
     restart: unless-stopped
     depends_on:
-      - postgres
-      - xwiki
+      postgres:
+        condition: service_healthy
+      xwiki:
+        condition: service_healthy
