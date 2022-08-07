@@ -23,7 +23,7 @@ volumes:
 services:
   postgres:
     # Image tag (replace with yours)
-    image: postgres:13.4
+    image: postgres:14
     volumes:
       - xwiki-postgres:/var/lib/postgresql/data
     environment:
@@ -46,7 +46,7 @@ services:
 
   xwiki:
     # Image tag (replace with yours)
-    image: xwiki:13.6-postgres-tomcat
+    image: xwiki:14.4-postgres-tomcat
     volumes:
       - xwiki-data:/usr/local/xwiki
     environment:
@@ -84,7 +84,7 @@ services:
 
   traefik:
     # Image tag (replace with yours)
-    image: traefik:2.5
+    image: traefik:2.8
     command:
       - "--log.level=WARN"
       - "--accesslog=true"
@@ -141,7 +141,7 @@ services:
 
   backups:
     # Image tag (replace with yours)
-    image: postgres:13.4
+    image: postgres:14
     # Database backups prune interval (replace with yours). Default is 7 days.
     # find /srv/xwiki-postgres/backups -type f -mtime +7 | xargs rm -f
 
