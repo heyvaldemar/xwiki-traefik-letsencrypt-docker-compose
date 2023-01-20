@@ -179,7 +179,7 @@ services:
              pg_dump
              -h postgres
              -p 5432
-             -d xwikidb
+             -d xwiki
              -U xwikidbuser | gzip > /srv/xwiki-postgres/backups/xwiki-postgres-backup-$$(date "+%Y-%m-%d_%H-%M").gz
              && tar -zcpf /srv/xwiki-application-data/backups/xwiki-application-data-backup-$$(date "+%Y-%m-%d_%H-%M").tar.gz /usr/local/xwiki
              && find /srv/xwiki-postgres/backups -type f -mtime +7 | xargs rm -f
