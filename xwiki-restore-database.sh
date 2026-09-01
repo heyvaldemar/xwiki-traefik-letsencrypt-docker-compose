@@ -16,7 +16,6 @@ XWIKI_CONTAINER=$(docker ps -aqf "name=xwiki-xwiki")
 XWIKI_BACKUPS_CONTAINER=$(docker ps -aqf "name=xwiki-backups")
 XWIKI_DB_NAME="xwiki"
 XWIKI_DB_USER="xwikidbuser"
-POSTGRES_PASSWORD=$(docker exec $XWIKI_BACKUPS_CONTAINER printenv PGPASSWORD)
 BACKUP_PATH="/srv/xwiki-postgres/backups/"
 
 echo "--> All available database backups:"
@@ -30,7 +29,7 @@ echo "--> Copy and paste the backup name from the list above to restore database
 --> Example: xwiki-postgres-backup-YYYY-MM-DD_hh-mm.gz"
 echo -n "--> "
 
-read SELECTED_DATABASE_BACKUP
+read -r SELECTED_DATABASE_BACKUP
 
 echo "--> $SELECTED_DATABASE_BACKUP was selected"
 
