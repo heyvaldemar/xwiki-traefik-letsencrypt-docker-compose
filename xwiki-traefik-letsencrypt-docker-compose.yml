@@ -27,6 +27,16 @@ volumes:
 services:
   postgres:
     image: *postgres-image
+    # Resource limits as .env-overridable defaults (e.g. XWIKI_POSTGRES_MEMORY_LIMIT=2g);
+    # the override survives every git pull.
+    deploy:
+      resources:
+        limits:
+          memory: ${XWIKI_POSTGRES_MEMORY_LIMIT:-1g}
+          cpus: "${XWIKI_POSTGRES_CPU_LIMIT:-1.0}"
+        reservations:
+          memory: ${XWIKI_POSTGRES_MEMORY_RESERVATION:-128m}
+          cpus: "${XWIKI_POSTGRES_CPU_RESERVATION:-0.25}"
     volumes:
       - xwiki-postgres:/var/lib/postgresql/data
     environment:
@@ -45,6 +55,16 @@ services:
 
   xwiki:
     image: *xwiki-image
+    # Resource limits as .env-overridable defaults (e.g. XWIKI_MEMORY_LIMIT=2g);
+    # the override survives every git pull.
+    deploy:
+      resources:
+        limits:
+          memory: ${XWIKI_MEMORY_LIMIT:-2g}
+          cpus: "${XWIKI_CPU_LIMIT:-2.0}"
+        reservations:
+          memory: ${XWIKI_MEMORY_RESERVATION:-256m}
+          cpus: "${XWIKI_CPU_RESERVATION:-0.5}"
     volumes:
       - xwiki-data:${DATA_PATH:-/usr/local/xwiki}
     environment:
@@ -93,6 +113,16 @@ services:
 
   traefik:
     image: *traefik-image
+    # Resource limits as .env-overridable defaults (e.g. TRAEFIK_MEMORY_LIMIT=2g);
+    # the override survives every git pull.
+    deploy:
+      resources:
+        limits:
+          memory: ${TRAEFIK_MEMORY_LIMIT:-256m}
+          cpus: "${TRAEFIK_CPU_LIMIT:-0.5}"
+        reservations:
+          memory: ${TRAEFIK_MEMORY_RESERVATION:-64m}
+          cpus: "${TRAEFIK_CPU_RESERVATION:-0.1}"
     command:
       # Set the log level (DEBUG, INFO, WARN, ERROR)
       - "--log.level=${TRAEFIK_LOG_LEVEL:-WARN}"
@@ -165,6 +195,16 @@ services:
 
   backups:
     image: *postgres-image
+    # Resource limits as .env-overridable defaults (e.g. XWIKI_BACKUPS_MEMORY_LIMIT=2g);
+    # the override survives every git pull.
+    deploy:
+      resources:
+        limits:
+          memory: ${XWIKI_BACKUPS_MEMORY_LIMIT:-256m}
+          cpus: "${XWIKI_BACKUPS_CPU_LIMIT:-0.5}"
+        reservations:
+          memory: ${XWIKI_BACKUPS_MEMORY_RESERVATION:-32m}
+          cpus: "${XWIKI_BACKUPS_CPU_RESERVATION:-0.1}"
     command: >-
       bash -c 'set -o pipefail;
       sleep "$$BACKUP_INIT_SLEEP";
