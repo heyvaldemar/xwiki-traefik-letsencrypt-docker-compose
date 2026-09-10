@@ -8,7 +8,7 @@
 x-images:
   traefik: &traefik-image ${TRAEFIK_IMAGE_TAG:-traefik:${TRAEFIK_IMAGE_VERSION:-3.7@sha256:f86a2cab1b5c649070c49f883c743dd32d8485a56e3368c5f93b9e91f1e91259}}
   postgres: &postgres-image ${XWIKI_POSTGRES_IMAGE_TAG:-postgres:${XWIKI_POSTGRES_IMAGE_VERSION:-15@sha256:9b1d34adbce1dd07ee6e94b4a2cf698884b89bd44a6c9c12f5da8f3acbfe4957}}
-  xwiki: &xwiki-image ${XWIKI_IMAGE_TAG:-xwiki:${XWIKI_IMAGE_VERSION:-18.7.0-postgres-tomcat@sha256:6091aec4bacbd49f2961f04db4685d4809abc711e772f9d81f5424371784ff10}}
+  xwiki: &xwiki-image ${XWIKI_IMAGE_TAG:-xwiki:${XWIKI_IMAGE_VERSION:-18.7.0-postgres-tomcat@sha256:d551b75d30666ce594d204b0c15a936786741f019375ed531233f136168bb218}}
 
 networks:
   xwiki-network:
