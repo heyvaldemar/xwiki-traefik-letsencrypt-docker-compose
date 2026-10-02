@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-_(no unreleased changes yet)_
+### Security
+
+- **`xwiki:18.8.0-postgres-tomcat` was rebuilt upstream**; the pin moved from `sha256:c61e02eb03ad…` to `sha256:a2f5c0807a86…`. Same version, same tag, a rebuilt base image — the usual shape of a security fix in a base layer.
 
 ## [1.9.1] - 2026-10-01
 
