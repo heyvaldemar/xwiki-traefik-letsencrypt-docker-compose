@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+_(no unreleased changes yet)_
+
+## [1.9.5] - 2026-10-08
+
 ### Security
 
 - **`postgres:15` was rebuilt upstream**; the pin moved from `sha256:7e2070cf6ad0…` to `sha256:c961aa287d86…`. Same version, same tag, a rebuilt base image — the usual shape of a security fix in a base layer.
@@ -290,7 +294,8 @@ v1.2.0.
   that boots the stack, waits out XWiki's first-start initialization, and
   requires the wiki UI to answer through Traefik.
 
-[Unreleased]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.4...HEAD
+[Unreleased]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.5...HEAD
+[1.9.5]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.4...v1.9.5
 [1.9.4]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.3...v1.9.4
 [1.9.3]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.2...v1.9.3
 [1.9.2]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.1...v1.9.2
