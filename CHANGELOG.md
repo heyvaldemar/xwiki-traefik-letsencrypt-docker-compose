@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+_(no unreleased changes yet)_
+
+## [1.9.12] - 2026-10-28
+
 ### Changed
 
 - **`xwiki:18.8.0-postgres-tomcat` moved to `xwiki:18.9.0-postgres-tomcat`.** The freshness check reported the lag; the deploy job booted the stack on the new image before this landed.
@@ -339,7 +343,8 @@ v1.2.0.
   that boots the stack, waits out XWiki's first-start initialization, and
   requires the wiki UI to answer through Traefik.
 
-[Unreleased]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.11...HEAD
+[Unreleased]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.12...HEAD
+[1.9.12]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.11...v1.9.12
 [1.9.11]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.10...v1.9.11
 [1.9.10]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.9...v1.9.10
 [1.9.9]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.8...v1.9.9
