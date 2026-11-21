@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+_(no unreleased changes yet)_
+
+## [1.9.28] - 2026-11-21
+
 ### Security
 
 - **`xwiki:18.9.0-postgres-tomcat` was rebuilt upstream**; the pin moved from `sha256:1a71cc7c7555…` to `sha256:244a5a3712f8…`. Same version, same tag, a rebuilt base image — the usual shape of a security fix in a base layer.
@@ -440,7 +444,8 @@ v1.2.0.
   that boots the stack, waits out XWiki's first-start initialization, and
   requires the wiki UI to answer through Traefik.
 
-[Unreleased]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.27...HEAD
+[Unreleased]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.28...HEAD
+[1.9.28]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.27...v1.9.28
 [1.9.27]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.26...v1.9.27
 [1.9.26]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.25...v1.9.26
 [1.9.25]: https://github.com/heyvaldemar/xwiki-traefik-letsencrypt-docker-compose/compare/v1.9.24...v1.9.25
